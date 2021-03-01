@@ -550,6 +550,10 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "type": "NUMERIC",
             "name": "values",
             "mode": "REPEATED"
@@ -570,6 +574,10 @@
             "type": "STRING",
             "name": "name",
             "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "key"
           },
           {
             "fields": [
@@ -1429,6 +1437,10 @@
                 "mode": "REQUIRED"
               },
               {
+                "type": "STRING",
+                "name": "key"
+              },
+              {
                 "type": "NUMERIC",
                 "name": "values",
                 "mode": "REPEATED"
@@ -1449,6 +1461,10 @@
                 "type": "STRING",
                 "name": "name",
                 "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "key"
               },
               {
                 "fields": [
@@ -2332,6 +2348,10 @@
                     "mode": "REQUIRED"
                   },
                   {
+                    "type": "STRING",
+                    "name": "key"
+                  },
+                  {
                     "type": "NUMERIC",
                     "name": "values",
                     "mode": "REPEATED"
@@ -2352,6 +2372,10 @@
                     "type": "STRING",
                     "name": "name",
                     "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "STRING",
+                    "name": "key"
                   },
                   {
                     "fields": [

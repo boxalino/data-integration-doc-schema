@@ -211,17 +211,28 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "STRING",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
-        "name": "value",
+        "name": "values",
         "mode": "REPEATED"
       }
     ],
@@ -241,17 +252,28 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "STRING",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
-        "name": "value",
+        "name": "values",
         "mode": "REPEATED"
       }
     ],
@@ -271,17 +293,28 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "STRING",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
-        "name": "value",
+        "name": "values",
         "mode": "REPEATED"
       }
     ],
@@ -475,6 +508,10 @@
           {
             "type": "STRING",
             "name": "currency"
+          },
+          {
+            "type": "STRING",
+            "name": "region"
           }
         ],
         "description": "price before any discount",
@@ -496,6 +533,10 @@
           {
             "type": "STRING",
             "name": "currency"
+          },
+          {
+            "type": "STRING",
+            "name": "region"
           }
         ],
         "description": "price displayed to the customer after discounts",
@@ -517,11 +558,44 @@
           {
             "type": "STRING",
             "name": "currency"
+          },
+          {
+            "type": "STRING",
+            "name": "region"
           }
         ],
         "description": "the sales gross margin as an absolute value",
         "type": "RECORD",
         "name": "gross_margin",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "language"
+          },
+          {
+            "type": "STRING",
+            "name": "value",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "currency"
+          },
+          {
+            "type": "STRING",
+            "name": "region"
+          }
+        ],
+        "description": "other sales price numbers",
+        "type": "RECORD",
+        "name": "other_prices",
         "mode": "REPEATED"
       },
       {
@@ -538,6 +612,10 @@
           {
             "type": "STRING",
             "name": "currency"
+          },
+          {
+            "type": "STRING",
+            "name": "region"
           }
         ],
         "description": "price before any discount",
@@ -559,6 +637,10 @@
           {
             "type": "STRING",
             "name": "currency"
+          },
+          {
+            "type": "STRING",
+            "name": "region"
           }
         ],
         "description": "price before any discount",
@@ -567,8 +649,9 @@
         "mode": "REPEATED"
       }
     ],
+    "description": "default price information to be used for skus without price information",
     "type": "RECORD",
-    "name": "pricing",
+    "name": "price",
     "mode": "REPEATED"
   },
   {
@@ -728,13 +811,24 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "STRING",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
@@ -759,6 +853,10 @@
         "mode": "REQUIRED"
       },
       {
+        "type": "STRING",
+        "name": "key"
+      },
+      {
         "type": "NUMERIC",
         "name": "values",
         "mode": "REPEATED"
@@ -781,16 +879,31 @@
         "mode": "REQUIRED"
       },
       {
+        "type": "STRING",
+        "name": "key"
+      },
+      {
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "NUMERIC",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "NUMERIC",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
@@ -840,13 +953,24 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "DATETIME",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",

@@ -143,12 +143,12 @@
   {
     "type": "BOOLEAN",
     "name": "is_gift",
-    "description": "was the order tax free?"
+    "description": "was the order a gift?"
   },
   {
     "type": "BOOLEAN",
     "name": "wrapping",
-    "description": "was the order tax free?"
+    "description": "was the order with wrapping?"
   },
   {
     "type": "STRING",
@@ -208,6 +208,14 @@
       {
         "type": "DATETIME",
         "name": "created"
+      },
+      {
+        "type": "STRING",
+        "name": "persona_type"
+      },
+      {
+        "type": "STRING",
+        "name": "persona_id"
       },
       {
         "type": "STRING",
@@ -442,13 +450,24 @@
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "STRING",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "STRING",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -473,6 +492,10 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "type": "NUMERIC",
             "name": "values",
             "mode": "REPEATED"
@@ -495,16 +518,31 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "NUMERIC",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "NUMERIC",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -554,13 +592,24 @@
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "DATETIME",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -852,13 +901,24 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "STRING",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
@@ -883,6 +943,10 @@
         "mode": "REQUIRED"
       },
       {
+        "type": "STRING",
+        "name": "key"
+      },
+      {
         "type": "NUMERIC",
         "name": "values",
         "mode": "REPEATED"
@@ -905,16 +969,31 @@
         "mode": "REQUIRED"
       },
       {
+        "type": "STRING",
+        "name": "key"
+      },
+      {
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "NUMERIC",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "NUMERIC",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
@@ -964,13 +1043,24 @@
         "fields": [
           {
             "type": "STRING",
-            "name": "language",
-            "mode": "REQUIRED"
+            "name": "value_id"
           },
           {
-            "type": "DATETIME",
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
             "name": "value",
-            "mode": "REQUIRED"
+            "mode": "REPEATED"
           }
         ],
         "type": "RECORD",
@@ -990,6 +1080,11 @@
         "type": "STRING",
         "name": "sku_id",
         "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "connection_property",
+        "description": "the name of the connecting property for the sku_id value in case not the sku.internal_id"
       },
       {
         "type": "STRING",
@@ -1078,13 +1173,24 @@
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "STRING",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "STRING",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -1109,6 +1215,10 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "type": "NUMERIC",
             "name": "values",
             "mode": "REPEATED"
@@ -1131,16 +1241,31 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "NUMERIC",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "NUMERIC",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -1190,13 +1315,24 @@
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "DATETIME",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -1244,6 +1380,10 @@
           {
             "type": "STRING",
             "name": "product_group"
+          },
+          {
+            "type": "STRING",
+            "name": "sku"
           },
           {
             "type": "STRING",
@@ -1326,13 +1466,24 @@
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "STRING",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "STRING",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -1357,6 +1508,10 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "type": "NUMERIC",
             "name": "values",
             "mode": "REPEATED"
@@ -1379,16 +1534,31 @@
             "mode": "REQUIRED"
           },
           {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "NUMERIC",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "NUMERIC",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",
@@ -1438,13 +1608,24 @@
             "fields": [
               {
                 "type": "STRING",
-                "name": "language",
-                "mode": "REQUIRED"
+                "name": "value_id"
               },
               {
-                "type": "DATETIME",
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
                 "name": "value",
-                "mode": "REQUIRED"
+                "mode": "REPEATED"
               }
             ],
             "type": "RECORD",

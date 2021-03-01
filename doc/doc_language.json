@@ -6,9 +6,9 @@
     "mode": "REQUIRED"
   },
   {
-    "description": "optional, needed only to differentiate two different ways to address the same language (e.g.: 'ch', 'de', ...), if used, the language used in other tables must be of the format '[country_code]-[language]', like 'ch-de' and 'de-de'",
     "type": "STRING",
-    "name": "country_code"
+    "name": "country_code",
+    "description": "optional, needed only to differentiate two diffrent ways to address the same language (e.g.: 'ch', 'de', ...), if used, the language used in other tables must be of the format '[country_code]-[language]', like 'ch-de' and 'de-de'"
   },
   {
     "description": "technical field",
