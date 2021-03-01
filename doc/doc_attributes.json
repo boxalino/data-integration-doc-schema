@@ -1,0 +1,270 @@
+[
+  {
+    "description": "the name of the attribute (should match the name of the attribute provided in the doc_product table in either string_attributes, numeric_attributes or localized_numeric_attributes",
+    "mode": "REQUIRED",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "description": "the internal identifier of the attribute",
+    "name": "internal_id",
+    "type": "STRING"
+  },
+  {
+    "description": "the external identifier of the attribute (can be the same as the internal identifier)",
+    "name": "external_id",
+    "type": "STRING"
+  },
+  {
+    "description": "the title of the attribute",
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "language",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "value",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "label",
+    "type": "RECORD"
+  },
+  {
+    "description": "the attribute group in which this attribute belongs",
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "language",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "value",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "attribute_group",
+    "type": "RECORD"
+  },
+  {
+    "description": "the attribute sub-group in which this attribute belongs",
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "language",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "value",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "attribute_sub_group",
+    "type": "RECORD"
+  },
+  {
+    "description": "the stores",
+    "mode": "REPEATED",
+    "name": "stores",
+    "type": "STRING"
+  },
+  {
+    "description": "the type format of the attribute : 'numeric', 'string' or 'datetime', it is supported to set it to string but provide numeric attributes in the products, as lon as you have a mapping logic in the attribute values",
+    "mode": "REQUIRED",
+    "name": "format",
+    "type": "STRING"
+  },
+  {
+    "description": "are the values localized (different for every language) or not, it is supported to set it to true but provide non-localized attributes in the products, as lon as you have a mapping logic in the attribute values",
+    "mode": "REQUIRED",
+    "name": "localized",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "the link of the attribute value",
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "language",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "value",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "link",
+    "type": "RECORD"
+  },
+  {
+    "description": "the list of related data types ('product', 'blog', 'content', ...), by default 'all' if empty",
+    "mode": "REPEATED",
+    "name": "data_types",
+    "type": "STRING"
+  },
+  {
+    "description": "is it possible for this attribute to have more than 1 value per sku (or final content), set to false unless necessary, as multi-valued vields cannot be sorted or grouped by",
+    "mode": "REQUIRED",
+    "name": "multi_value",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "is it an attribute that has a hierarchy of values (e.g.: category tree)",
+    "mode": "REQUIRED",
+    "name": "hierarchical",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "should be indexed as part of the searcheable : 0 : values not indexed for search, 1 : values indexed for search only in main index, 2 : values indexed for search in specialized field which can be boosted individually",
+    "mode": "REQUIRED",
+    "name": "search_by",
+    "type": "INTEGER"
+  },
+  {
+    "description": "should this attribute values be used as search suggestions",
+    "mode": "REQUIRED",
+    "name": "search_suggestion",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "is it an attribute that needs to be used as a filter in some requests",
+    "mode": "REQUIRED",
+    "name": "filter_by",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "is it a attribute that needs to be grouped by in some requests (if set to true, then multi_value must be set to false)",
+    "mode": "REQUIRED",
+    "name": "group_by",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "is it a attribute that needs to be ordered by in some requests (if set to true, then multi_value must be set to false)",
+    "mode": "REQUIRED",
+    "name": "order_by",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "should this attribute values be indexed independantly so they can be searched for (e.g.: author, brand, ...)",
+    "mode": "REQUIRED",
+    "name": "indexed",
+    "type": "BOOLEAN"
+  },
+  {
+    "description": "the product visibility :VISIBILITY_NOT_VISIBLE = 1; VISIBILITY_IN_CATALOG = 2; VISIBILITY_IN_SEARCH = 3; VISIBILITY_BOTH = 4;",
+    "fields": [
+      {
+        "mode": "REPEATED",
+        "name": "customer_groups",
+        "type": "STRING"
+      },
+      {
+        "fields": [
+          {
+            "mode": "REQUIRED",
+            "name": "language",
+            "type": "STRING"
+          },
+          {
+            "mode": "REQUIRED",
+            "name": "value",
+            "type": "INTEGER"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "values",
+        "type": "RECORD"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "visibility",
+    "type": "RECORD"
+  },
+  {
+    "description": "the product status",
+    "fields": [
+      {
+        "mode": "REQUIRED",
+        "name": "language",
+        "type": "STRING"
+      },
+      {
+        "mode": "REQUIRED",
+        "name": "value",
+        "type": "INTEGER"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "status",
+    "type": "RECORD"
+  },
+  {
+    "description": "information about the activity periods of the product group",
+    "fields": [
+      {
+        "fields": [
+          {
+            "mode": "REQUIRED",
+            "name": "language",
+            "type": "STRING"
+          },
+          {
+            "mode": "REQUIRED",
+            "name": "value",
+            "type": "DATETIME"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "start_datetime",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "REQUIRED",
+            "name": "language",
+            "type": "STRING"
+          },
+          {
+            "mode": "REQUIRED",
+            "name": "value",
+            "type": "DATETIME"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "end_datetime",
+        "type": "RECORD"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "periods",
+    "type": "RECORD"
+  },
+  {
+    "description": "technical field",
+    "mode": "REQUIRED",
+    "name": "creation_tm",
+    "type": "DATETIME"
+  },
+  {
+    "description": "technical field",
+    "mode": "REQUIRED",
+    "name": "client_id",
+    "type": "INTEGER"
+  },
+  {
+    "description": "technical field",
+    "mode": "REQUIRED",
+    "name": "src_sys_id",
+    "type": "INTEGER"
+  }
+]

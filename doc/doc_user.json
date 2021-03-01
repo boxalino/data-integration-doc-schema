@@ -1,0 +1,1105 @@
+[
+  {
+    "description": "the persona_id as referenced in other tables",
+    "type": "STRING",
+    "name": "persona_id",
+    "mode": "REQUIRED"
+  },
+  {
+    "type": "STRING",
+    "name": "persona_type",
+    "description": "the type of persona (user, guest, ...)"
+  },
+  {
+    "type": "STRING",
+    "name": "internal_id",
+    "description": "an additional internal id (optional)"
+  },
+  {
+    "type": "STRING",
+    "name": "external_id",
+    "description": "the external identifier of the user (can be the same as the internal identifier)"
+  },
+  {
+    "type": "STRING",
+    "name": "title"
+  },
+  {
+    "type": "STRING",
+    "name": "prefix"
+  },
+  {
+    "type": "STRING",
+    "name": "firstname"
+  },
+  {
+    "type": "STRING",
+    "name": "middlename"
+  },
+  {
+    "type": "STRING",
+    "name": "lastname"
+  },
+  {
+    "type": "STRING",
+    "name": "suffix"
+  },
+  {
+    "type": "STRING",
+    "name": "gender"
+  },
+  {
+    "type": "DATETIME",
+    "name": "date_of_birth"
+  },
+  {
+    "type": "DATETIME",
+    "name": "account_creation"
+  },
+  {
+    "type": "STRING",
+    "name": "creation_label"
+  },
+  {
+    "type": "STRING",
+    "name": "auto_group"
+  },
+  {
+    "type": "STRING",
+    "name": "invoice_status"
+  },
+  {
+    "type": "STRING",
+    "name": "status"
+  },
+  {
+    "type": "STRING",
+    "name": "spouse_id"
+  },
+  {
+    "type": "STRING",
+    "name": "children_ids",
+    "mode": "REPEATED"
+  },
+  {
+    "type": "STRING",
+    "name": "customer_groups",
+    "mode": "REPEATED"
+  },
+  {
+    "description": "the stores",
+    "type": "STRING",
+    "name": "stores",
+    "mode": "REPEATED"
+  },
+  {
+    "description": "the stores",
+    "type": "STRING",
+    "name": "websites",
+    "mode": "REPEATED"
+  },
+  {
+    "type": "STRING",
+    "name": "company"
+  },
+  {
+    "type": "STRING",
+    "name": "vat"
+  },
+  {
+    "type": "BOOLEAN",
+    "name": "vat_is_valid"
+  },
+  {
+    "type": "STRING",
+    "name": "vat_request_id"
+  },
+  {
+    "type": "DATETIME",
+    "name": "vat_request_date"
+  },
+  {
+    "type": "BOOLEAN",
+    "name": "vat_request_success"
+  },
+  {
+    "type": "STRING",
+    "name": "street"
+  },
+  {
+    "type": "STRING",
+    "name": "additional_address_line"
+  },
+  {
+    "type": "STRING",
+    "name": "city"
+  },
+  {
+    "type": "STRING",
+    "name": "zipcode"
+  },
+  {
+    "type": "STRING",
+    "name": "stateID"
+  },
+  {
+    "type": "STRING",
+    "name": "department"
+  },
+  {
+    "type": "STRING",
+    "name": "statename"
+  },
+  {
+    "type": "STRING",
+    "name": "countryiso"
+  },
+  {
+    "type": "STRING",
+    "name": "countryID"
+  },
+  {
+    "type": "STRING",
+    "name": "phone"
+  },
+  {
+    "type": "STRING",
+    "name": "email"
+  },
+  {
+    "type": "STRING",
+    "name": "mobile_phone"
+  },
+  {
+    "type": "STRING",
+    "name": "fax"
+  },
+  {
+    "type": "STRING",
+    "name": "giftregistry_item_id"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional string (not localized) attributes of the voucher",
+    "type": "RECORD",
+    "name": "string_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional localized string attributes of the voucher",
+    "type": "RECORD",
+    "name": "localized_string_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "NUMERIC",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional numeric (not localized) attributes of the voucher",
+    "type": "RECORD",
+    "name": "numeric_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "NUMERIC",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional localized numeric attributes of the voucher",
+    "type": "RECORD",
+    "name": "localized_numeric_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "DATETIME",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional datetime (not localized) attributes of the voucher",
+    "type": "RECORD",
+    "name": "datetime_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "DATETIME",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional localized datetime attributes of the voucher",
+    "type": "RECORD",
+    "name": "localized_datetime_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "INTEGER",
+        "name": "status",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "start_datetime",
+            "mode": "REPEATED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "end_datetime",
+            "mode": "REPEATED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "periods",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "the state of the subscriptions (e-mails and others)",
+    "type": "RECORD",
+    "name": "subscriptions",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "INTEGER",
+        "name": "status",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "start_datetime",
+            "mode": "REPEATED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "end_datetime",
+            "mode": "REPEATED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "periods",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "the state of the notofications (e-mails and others)",
+    "type": "RECORD",
+    "name": "notifications",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "INTEGER",
+        "name": "status",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "start_datetime",
+            "mode": "REPEATED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "end_datetime",
+            "mode": "REPEATED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "periods",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "the state of the vouchers (used and others)",
+    "type": "RECORD",
+    "name": "voucher_states",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "description": "e.g.: billing, shipping",
+        "type": "STRING",
+        "name": "type",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "persona_id",
+        "description": "the persona_id as referenced in other tables"
+      },
+      {
+        "type": "STRING",
+        "name": "persona_type",
+        "description": "the type of persona (user, guest, ...)"
+      },
+      {
+        "type": "STRING",
+        "name": "internal_id",
+        "description": "an additional internal id (optional)"
+      },
+      {
+        "type": "STRING",
+        "name": "external_id",
+        "description": "the external identifier of the user (can be the same as the internal identifier)"
+      },
+      {
+        "type": "STRING",
+        "name": "title"
+      },
+      {
+        "type": "STRING",
+        "name": "prefix"
+      },
+      {
+        "type": "STRING",
+        "name": "firstname"
+      },
+      {
+        "type": "STRING",
+        "name": "middlename"
+      },
+      {
+        "type": "STRING",
+        "name": "lastname"
+      },
+      {
+        "type": "STRING",
+        "name": "suffix"
+      },
+      {
+        "type": "STRING",
+        "name": "gender"
+      },
+      {
+        "type": "DATETIME",
+        "name": "date_of_birth"
+      },
+      {
+        "type": "DATETIME",
+        "name": "account_creation"
+      },
+      {
+        "type": "STRING",
+        "name": "creation_label"
+      },
+      {
+        "type": "STRING",
+        "name": "auto_group"
+      },
+      {
+        "type": "STRING",
+        "name": "invoice_status"
+      },
+      {
+        "type": "STRING",
+        "name": "status"
+      },
+      {
+        "type": "STRING",
+        "name": "spouse_id"
+      },
+      {
+        "type": "STRING",
+        "name": "children_ids",
+        "mode": "REPEATED"
+      },
+      {
+        "type": "STRING",
+        "name": "customer_groups",
+        "mode": "REPEATED"
+      },
+      {
+        "description": "the stores",
+        "type": "STRING",
+        "name": "stores",
+        "mode": "REPEATED"
+      },
+      {
+        "description": "the stores",
+        "type": "STRING",
+        "name": "websites",
+        "mode": "REPEATED"
+      },
+      {
+        "type": "STRING",
+        "name": "company"
+      },
+      {
+        "type": "STRING",
+        "name": "vat"
+      },
+      {
+        "type": "BOOLEAN",
+        "name": "vat_is_valid"
+      },
+      {
+        "type": "STRING",
+        "name": "vat_request_id"
+      },
+      {
+        "type": "DATETIME",
+        "name": "vat_request_date"
+      },
+      {
+        "type": "BOOLEAN",
+        "name": "vat_request_success"
+      },
+      {
+        "type": "STRING",
+        "name": "street"
+      },
+      {
+        "type": "STRING",
+        "name": "additional_address_line"
+      },
+      {
+        "type": "STRING",
+        "name": "city"
+      },
+      {
+        "type": "STRING",
+        "name": "zipcode"
+      },
+      {
+        "type": "STRING",
+        "name": "stateID"
+      },
+      {
+        "type": "STRING",
+        "name": "department"
+      },
+      {
+        "type": "STRING",
+        "name": "statename"
+      },
+      {
+        "type": "STRING",
+        "name": "countryiso"
+      },
+      {
+        "type": "STRING",
+        "name": "countryID"
+      },
+      {
+        "type": "STRING",
+        "name": "phone"
+      },
+      {
+        "type": "STRING",
+        "name": "email"
+      },
+      {
+        "type": "STRING",
+        "name": "mobile_phone"
+      },
+      {
+        "type": "STRING",
+        "name": "fax"
+      },
+      {
+        "type": "STRING",
+        "name": "giftregistry_item_id"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional string (not localized) attributes of the voucher",
+        "type": "RECORD",
+        "name": "string_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "STRING",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional localized string attributes of the voucher",
+        "type": "RECORD",
+        "name": "localized_string_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "NUMERIC",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional numeric (not localized) attributes of the voucher",
+        "type": "RECORD",
+        "name": "numeric_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "NUMERIC",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional localized numeric attributes of the voucher",
+        "type": "RECORD",
+        "name": "localized_numeric_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "DATETIME",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional datetime (not localized) attributes of the voucher",
+        "type": "RECORD",
+        "name": "datetime_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "language",
+                "mode": "REQUIRED"
+              },
+              {
+                "type": "DATETIME",
+                "name": "value",
+                "mode": "REQUIRED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional localized datetime attributes of the voucher",
+        "type": "RECORD",
+        "name": "localized_datetime_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "INTEGER",
+            "name": "status",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "start_datetime",
+                "mode": "REPEATED"
+              },
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "end_datetime",
+                "mode": "REPEATED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "periods",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "the state of the subscriptions (e-mails and others)",
+        "type": "RECORD",
+        "name": "subscriptions",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "INTEGER",
+            "name": "status",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "start_datetime",
+                "mode": "REPEATED"
+              },
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "end_datetime",
+                "mode": "REPEATED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "periods",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "the state of the notofications (e-mails and others)",
+        "type": "RECORD",
+        "name": "notifications",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "INTEGER",
+            "name": "status",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "start_datetime",
+                "mode": "REPEATED"
+              },
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "end_datetime",
+                "mode": "REPEATED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "periods",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "the state of the vouchers (used and others)",
+        "type": "RECORD",
+        "name": "voucher_states",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "billing/shipping and other contact information",
+    "type": "RECORD",
+    "name": "contacts",
+    "mode": "REPEATED"
+  },
+  {
+    "description": "technical field",
+    "type": "DATETIME",
+    "name": "creation_tm",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "technical field",
+    "type": "INTEGER",
+    "name": "client_id",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "technical field",
+    "type": "INTEGER",
+    "name": "src_sys_id",
+    "mode": "REQUIRED"
+  }
+]

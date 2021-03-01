@@ -1,0 +1,567 @@
+[
+  {
+    "description": "the unique id of the user selection",
+    "type": "STRING",
+    "name": "id",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "the type of user selection: 'basket', 'wishlist', 'compare', 'favorite', ...",
+    "type": "STRING",
+    "name": "type",
+    "mode": "REQUIRED"
+  },
+  {
+    "type": "DATETIME",
+    "name": "creation",
+    "description": "the creation date time of the user selection"
+  },
+  {
+    "type": "DATETIME",
+    "name": "last_update",
+    "description": "the last update date time of the user selection"
+  },
+  {
+    "type": "STRING",
+    "name": "persona_type",
+    "description": "the persona type who created this user selection"
+  },
+  {
+    "type": "STRING",
+    "name": "persona_id",
+    "description": "the persona who created this user selection"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name"
+      },
+      {
+        "type": "STRING",
+        "name": "product_line"
+      },
+      {
+        "type": "STRING",
+        "name": "product_group"
+      },
+      {
+        "type": "STRING",
+        "name": "sku"
+      },
+      {
+        "type": "NUMERIC",
+        "name": "value"
+      },
+      {
+        "type": "DATETIME",
+        "name": "creation"
+      },
+      {
+        "type": "DATETIME",
+        "name": "last_update"
+      }
+    ],
+    "description": "connections to products",
+    "type": "RECORD",
+    "name": "products",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name"
+      },
+      {
+        "type": "STRING",
+        "name": "content_type"
+      },
+      {
+        "type": "STRING",
+        "name": "content_id"
+      },
+      {
+        "type": "NUMERIC",
+        "name": "value"
+      },
+      {
+        "type": "DATETIME",
+        "name": "creation"
+      },
+      {
+        "type": "DATETIME",
+        "name": "last_update"
+      }
+    ],
+    "description": "relations to other contents",
+    "type": "RECORD",
+    "name": "contents",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name"
+      },
+      {
+        "type": "STRING",
+        "name": "persona_id"
+      },
+      {
+        "type": "STRING",
+        "name": "customer_id"
+      },
+      {
+        "type": "NUMERIC",
+        "name": "value"
+      },
+      {
+        "type": "DATETIME",
+        "name": "creation"
+      },
+      {
+        "type": "DATETIME",
+        "name": "last_update"
+      }
+    ],
+    "description": "relations to other customers",
+    "type": "RECORD",
+    "name": "customers",
+    "mode": "REPEATED"
+  },
+  {
+    "description": "the ucg value (weighting) (e.g.: 0.0 - 5.0 for stars)",
+    "type": "NUMERIC",
+    "name": "value"
+  },
+  {
+    "description": "the stores",
+    "type": "STRING",
+    "name": "stores",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "language",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "value",
+        "mode": "REQUIRED"
+      }
+    ],
+    "description": "the title of the user selection",
+    "type": "RECORD",
+    "name": "title",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "language",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "value",
+        "mode": "REQUIRED"
+      }
+    ],
+    "description": "the short description of the product group",
+    "type": "RECORD",
+    "name": "short_description",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "language",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "value",
+        "mode": "REQUIRED"
+      }
+    ],
+    "description": "the description of the user selection",
+    "type": "RECORD",
+    "name": "description",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "value",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "the images of the user selection",
+    "type": "RECORD",
+    "name": "images",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "language",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "value",
+        "mode": "REQUIRED"
+      }
+    ],
+    "description": "the link of the user selection",
+    "type": "RECORD",
+    "name": "link",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "value",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "loc_values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "the tags of the product line, e.g.: [STRUCT('tag', 'hello world', [STRUCT('de', 'hello world')])]",
+    "type": "RECORD",
+    "name": "tags",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "value",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "loc_values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "the labels of the user selection, e.g.: [STRUCT('symbol', 'helpful', 'very', [STRUCT('de', 'sehr hilfreich')])]",
+    "type": "RECORD",
+    "name": "labels",
+    "mode": "REPEATED"
+  },
+  {
+    "type": "BOOLEAN",
+    "name": "status",
+    "description": "the ucg status"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "DATETIME",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "start_datetime",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "DATETIME",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "end_datetime",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "information about the activity periods of the user selection",
+    "type": "RECORD",
+    "name": "periods",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional string (not localized) attributes of the user selection",
+    "type": "RECORD",
+    "name": "string_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional localized string attributes of the user selection",
+    "type": "RECORD",
+    "name": "localized_string_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "NUMERIC",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional numeric (not localized) attributes of the user selection",
+    "type": "RECORD",
+    "name": "numeric_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "NUMERIC",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional localized numeric attributes of the user selection",
+    "type": "RECORD",
+    "name": "localized_numeric_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "DATETIME",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional datetime (not localized) attributes of the user selection",
+    "type": "RECORD",
+    "name": "datetime_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "type"
+      },
+      {
+        "type": "STRING",
+        "name": "name",
+        "mode": "REQUIRED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "language",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "DATETIME",
+            "name": "value",
+            "mode": "REQUIRED"
+          }
+        ],
+        "type": "RECORD",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional localized datetime attributes of the user selection",
+    "type": "RECORD",
+    "name": "localized_datetime_attributes",
+    "mode": "REPEATED"
+  },
+  {
+    "description": "technical field",
+    "type": "DATETIME",
+    "name": "creation_tm",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "technical field",
+    "type": "INTEGER",
+    "name": "client_id",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "technical field",
+    "type": "INTEGER",
+    "name": "src_sys_id",
+    "mode": "REQUIRED"
+  }
+]
