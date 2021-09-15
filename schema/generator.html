@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="schema"></p>
+
+<script>
+
+var bqSchema = []; // put your bigquery table schema here
+
+function createSchema(bqSchema) {
+  var schema = {
+    "type": "object",
+    "required": [
+    ],
+    "properties": {
+    }
+  };
+  for(var property of bqSchema) {
+  	if(property.mode != null && property.mode.toLowerCase() == "required") {
+    	schema.required.push(property.name);
+    }
+    if(property.type != null && property.type.toLowerCase() == "string") {
+    	schema.properties[property.name] = {"type":"string"};
+    }
+    if(property.type != null && property.type.toLowerCase() == "integer") {
+    	schema.properties[property.name] = {"type":"integer"};
+    }
+    if(property.type != null && property.type.toLowerCase() == "datetime") {
+    	schema.properties[property.name] = {"type":"string"};
+    }
+    if(property.type != null && property.type.toLowerCase() == "record") {
+    	schema.properties[property.name] = createSchema(property.fields);
+    }
+  	if(property.mode != null && property.mode.toLowerCase() == "repeated") {
+    	schema.properties[property.name] = {"type":"array","items":schema.properties[property.name]};
+    }
+  }
+  return schema;
+}
+
+var schema = createSchema(bqSchema);
+
+document.getElementById("schema").innerHTML = JSON.stringify(schema);
+</script>
+
+</body>
+</html>
