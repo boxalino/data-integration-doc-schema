@@ -819,7 +819,8 @@
   },
   {
     "type": "DATETIME",
-    "name": "creation"
+    "name": "creation",
+    "mode": "REQUIRED"
   },
   {
     "type": "DATETIME",

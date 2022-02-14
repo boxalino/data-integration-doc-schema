@@ -87,7 +87,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.doc_order_{{ F|D 
 		, notifications ARRAY<STRUCT<type STRING, name STRING NOT NULL, status INT64 NOT NULL, periods ARRAY<STRUCT<start_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>, end_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>>>> OPTIONS(description="the state of the notofications (e-mails and others)")
 		, voucher_states ARRAY<STRUCT<type STRING, name STRING NOT NULL, status INT64 NOT NULL, periods ARRAY<STRUCT<start_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>, end_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>>>> OPTIONS(description="the state of the vouchers (used and others)")
 	>> OPTIONS(description="billing/shipping and other contact information")
-	, creation DATETIME
+	, creation DATETIME NOT NULL
 	, last_update DATETIME
 	, confirmation DATETIME
 	, cleared DATETIME
