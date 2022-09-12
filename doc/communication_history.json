@@ -1,0 +1,197 @@
+[
+  {
+    "description": "a unique event id (PK)",
+    "type": "INTEGER",
+    "name": "id",
+    "mode": "REQUIRED"
+  },
+  {
+    "type": "INTEGER",
+    "name": "customer_id",
+    "description": "the account id of the customer"
+  },
+  {
+    "type": "STRING",
+    "name": "email",
+    "description": "the email address (can be null)"
+  },
+  {
+    "type": "STRING",
+    "name": "cemv",
+    "description": "the visitor cookie id from Boxalino (can be null)"
+  },
+  {
+    "type": "STRING",
+    "name": "run_id",
+    "description": "the id of the batch execution (can cover several communications)"
+  },
+  {
+    "description": "the id of the communication (unique per communication, but can have several events, like sent, open, click, ...",
+    "type": "STRING",
+    "name": "message_id",
+    "mode": "REQUIRED"
+  },
+  {
+    "type": "STRING",
+    "name": "external_id",
+    "description": "an external id if provided by a separated system (for example, the request_id if provided by boxalino narrative response)"
+  },
+  {
+    "type": "STRING",
+    "name": "name",
+    "description": "the name of the campaign or communication"
+  },
+  {
+    "type": "STRING",
+    "name": "from_name",
+    "description": "the name of the person sending the communication"
+  },
+  {
+    "type": "STRING",
+    "name": "from_email",
+    "description": "the email of the person sending the communication"
+  },
+  {
+    "type": "STRING",
+    "name": "subject",
+    "description": "the subject line of the communication"
+  },
+  {
+    "type": "STRING",
+    "name": "first_sentence",
+    "description": "the first line of the e-mail appearing before opening the e-mail"
+  },
+  {
+    "description": "the kind of event, is one of the following values: 'reaction', ...",
+    "type": "STRING",
+    "name": "type",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "the channel of the communication: 'email', ...",
+    "type": "STRING",
+    "name": "channel",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "the type of event, is one of the following values: 'open', 'sent', 'click', ...",
+    "type": "STRING",
+    "name": "event_type",
+    "mode": "REQUIRED"
+  },
+  {
+    "type": "TIMESTAMP",
+    "name": "datetime",
+    "description": "the timestamp of the event"
+  },
+  {
+    "fields": [
+      {
+        "description": "main products related to the content",
+        "type": "STRING",
+        "name": "product_ids",
+        "mode": "REPEATED"
+      },
+      {
+        "description": "main topics related to the content",
+        "type": "STRING",
+        "name": "topic_ids",
+        "mode": "REPEATED"
+      },
+      {
+        "description": "main categories related to the content",
+        "type": "STRING",
+        "name": "category_ids",
+        "mode": "REPEATED"
+      },
+      {
+        "description": "main brands related to the content",
+        "type": "STRING",
+        "name": "brands",
+        "mode": "REPEATED"
+      },
+      {
+        "description": "widgets of the api request",
+        "type": "STRING",
+        "name": "widgets",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "key",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "filters of the api request",
+        "type": "RECORD",
+        "name": "filters",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "key",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "parameters of the api request",
+        "type": "RECORD",
+        "name": "context_parameters",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "key",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional parameters about the content",
+        "type": "RECORD",
+        "name": "additional_info",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "information about the content of the communication",
+    "type": "RECORD",
+    "name": "content",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
+        "name": "key",
+        "mode": "REQUIRED"
+      },
+      {
+        "type": "STRING",
+        "name": "values",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "additional parameters about the communication",
+    "type": "RECORD",
+    "name": "additional_info",
+    "mode": "REPEATED"
+  }
+]
