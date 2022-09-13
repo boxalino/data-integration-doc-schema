@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_history_{{ F|D }}_{{ YYYYMMDD }}_{{ SENDING_SYS_CD }}` (
+CREATE OR REPLACE TABLE `bx-bdp-53322.perfecthair_core.communication_history` (
 	event_id STRING OPTIONS(description="a unique communication event id (PK), optional (mainly diagnostic / debugging / maintenance)")
 	, event_type STRING NOT NULL OPTIONS(description="the type of event, is one of the following values: 'sent', 'bounce', 'open', 'click', ...")
 	, event_category STRING NOT NULL OPTIONS(description="the category of event, is one of the following values: 'inbound', 'outbound', ...")
@@ -8,7 +8,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_his
 	, channel_id STRING OPTIONS(description="the id of the communication channel (optional)")
 	, channel_name STRING NOT NULL OPTIONS(description="the channel (name) of the communication: 'email', ...")
 	, run_id STRING OPTIONS(description="the id of the batch execution (can cover several sending ids) (optional)")
-	, communication_id NOT NULL STRING OPTIONS(description="a unique communication id should be unique per message sent to a specific person and should match the communication_id of the communication_planning table")
+	, communication_id STRING NOT NULL OPTIONS(description="a unique communication id should be unique per message sent to a specific person and should match the communication_id of the communication_planning table")
 	, message_id STRING NOT NULL OPTIONS(description="the id of the communication (unique per communication, but could be applied to many receipients, ...)")
 	, message_name STRING OPTIONS(description="the name of the communication")
 	, thread_id STRING OPTIONS(description="the id of the communication thread (should refer to a prior communication_id or message_id which is the root of the thread)")
@@ -88,7 +88,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_his
 	, receiver_attribute_4_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure receivers")
 	, receiver_attribute_5_name STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure receivers")
 	, receiver_attribute_5_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure receivers")
-	senders ARRAY<STRUCT<
+	, senders ARRAY<STRUCT<
 		type STRING NOT NULL OPTIONS(description="e.g.: billing, shipping")
 		, persona_id STRING OPTIONS(description="the persona_id as referenced in other tables")
 		, persona_type STRING OPTIONS(description="the type of persona (user, guest, ...)")
@@ -158,10 +158,10 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_his
 	, sender_attribute_4_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure senders")
 	, sender_attribute_5_name STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure senders")
 	, sender_attribute_5_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure senders")
-	contents ARRAY<STRUCT<
+	, contents ARRAY<STRUCT<
 		id STRING OPTIONS(description="the unique id of the content as provided in doc_content")
 		, type STRING OPTIONS(description="the type of content as provided in doc_content: 'blog', 'magazin', 'page', ...")
-		, language STRING (description="the language of the communication")
+		, language STRING OPTIONS(description="the language of the communication")
 		, title STRING OPTIONS(description="the title of the content")
 		, short_description STRING OPTIONS(description="the short description of the content")
 		, description STRING OPTIONS(description="the description of the content")
@@ -220,5 +220,5 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_his
 	, attribute_5_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure attributes")
 ) 
 partition by date(datetime)
-cluster by customer_id
+cluster by receiver_id
 ;
