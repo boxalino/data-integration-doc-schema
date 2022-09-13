@@ -6,9 +6,15 @@
     "mode": "REQUIRED"
   },
   {
-    "type": "INTEGER",
-    "name": "customer_id",
-    "description": "the account id of the customer"
+    "description": "the persona_id as referenced in other tables",
+    "type": "STRING",
+    "name": "persona_id",
+    "mode": "REQUIRED"
+  },
+  {
+    "type": "STRING",
+    "name": "persona_type",
+    "description": "the type of persona (user, guest, ...)"
   },
   {
     "type": "STRING",
@@ -17,7 +23,7 @@
   },
   {
     "type": "STRING",
-    "name": "cemv",
+    "name": "last_visitor_id",
     "description": "the visitor cookie id from Boxalino (can be null)"
   },
   {
