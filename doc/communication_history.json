@@ -2355,5 +2355,23 @@
     "type": "STRING",
     "name": "attribute_5_value",
     "description": "use only if providing data in flat format (like CSV) if you skip the nested structure attributes"
+  },
+  {
+    "description": "technical field",
+    "type": "DATETIME",
+    "name": "creation_tm",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "technical field",
+    "type": "INTEGER",
+    "name": "client_id",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "technical field",
+    "type": "INTEGER",
+    "name": "src_sys_id",
+    "mode": "REQUIRED"
   }
 ]

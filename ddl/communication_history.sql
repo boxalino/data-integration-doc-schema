@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `bx-bdp-53322.perfecthair_core.communication_history` (
+CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_history_{{ YYYYMMDD }}_{{ SENDING_SYS_CD }}` (
 	event_id STRING OPTIONS(description="a unique communication event id (PK), optional (mainly diagnostic / debugging / maintenance)")
 	, event_type STRING NOT NULL OPTIONS(description="the type of event, is one of the following values: 'sent', 'bounce', 'open', 'click', ...")
 	, event_category STRING NOT NULL OPTIONS(description="the category of event, is one of the following values: 'inbound', 'outbound', ...")
@@ -168,9 +168,9 @@ CREATE OR REPLACE TABLE `bx-bdp-53322.perfecthair_core.communication_history` (
 		, parent_content_ids ARRAY<STRING NOT NULL>  OPTIONS(description="the parent contents related to this content (e.g.: rating of themost helpful customer review / comments)")
 		, products ARRAY<STRUCT<type STRING, name STRING, product_line STRING, product_group STRING, sku STRING, value NUMERIC>> OPTIONS(description="connections to products")
 		, contents ARRAY<STRUCT<type STRING, name STRING, content_type STRING, content_id STRING, value NUMERIC>> OPTIONS(description="relations to other contents")
-		, topics ARRAY<STRUCT<name STRING NOT NULL, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the topics of the content")
-		, brands ARRAY<STRUCT<name STRING NOT NULL, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the brands of the content")
-		, suppliers ARRAY<STRUCT<name STRING NOT NULL, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the suppliers of the content")
+		, topics ARRAY<STRUCT<name STRING, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the topics of the content")
+		, brands ARRAY<STRUCT<name STRING, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the brands of the content")
+		, suppliers ARRAY<STRUCT<name STRING, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the suppliers of the content")
 		, categories ARRAY<STRUCT<categorization STRING NOT NULL, category_ids ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>> OPTIONS(description="the categories of the content")
 		, images ARRAY<STRUCT<name STRING, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>>>> OPTIONS(description="the images of the content")
 		, link ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>> OPTIONS(description="the link of the content")
@@ -218,6 +218,9 @@ CREATE OR REPLACE TABLE `bx-bdp-53322.perfecthair_core.communication_history` (
 	, attribute_4_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure attributes")
 	, attribute_5_name STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure attributes")
 	, attribute_5_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure attributes")
+    , creation_tm   DATETIME NOT NULL OPTIONS(description="technical field")
+    , client_id     INT64 NOT NULL OPTIONS(description="technical field")
+    , src_sys_id    INT64 NOT NULL OPTIONS(description="technical field")
 ) 
 partition by date(datetime)
 cluster by receiver_id
