@@ -179,7 +179,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_pla
 		, datetime_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<DATETIME NOT NULL>>> OPTIONS(description="additional datetime (not localized) attributes of the content")
 		, localized_datetime_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<STRUCT<value_id STRING, value ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>>>> OPTIONS(description="additional localized datetime attributes of the content")
 	>>  OPTIONS(description="information about the content of the communication, typically only provided for the 'sent' event, as the other events should refer to the same message_id and persona_id / email so no need to indicate the content every time, only for sent")
-	, request ARRAY<STRUCT<
+	, requests ARRAY<STRUCT<
 		 sessionId STRING OPTIONS(description="indicates if a specific sessionId must be provided, typically it is not indicated and you should set it with the value of the cems cookie if you have one")
 		, profileId STRING OPTIONS(description="indicates if a specific profileId must be provided, typically it is not indicated and you should set it with the value of the cemv cookie if you have one")
 		, customerId STRING OPTIONS(description="indicates if a specific customerId must be provided, typically it is not indicated and you should use the user account persona_id")

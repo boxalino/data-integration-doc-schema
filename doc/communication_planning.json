@@ -2663,7 +2663,7 @@
     ],
     "description": "information about the content of the communication, typically only provided for the 'sent' event, as the other events should refer to the same message_id and persona_id / email so no need to indicate the content every time, only for sent",
     "type": "RECORD",
-    "name": "request",
+    "name": "requests",
     "mode": "REPEATED"
   },
   {
