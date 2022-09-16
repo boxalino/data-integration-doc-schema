@@ -2270,6 +2270,406 @@
     "fields": [
       {
         "type": "STRING",
+        "name": "sessionId",
+        "description": "indicates if a specific sessionId must be provided, typically it is not indicated and you should set it with the value of the cems cookie if you have one"
+      },
+      {
+        "type": "STRING",
+        "name": "profileId",
+        "description": "indicates if a specific profileId must be provided, typically it is not indicated and you should set it with the value of the cemv cookie if you have one"
+      },
+      {
+        "type": "STRING",
+        "name": "customerId",
+        "description": "indicates if a specific customerId must be provided, typically it is not indicated and you should use the user account persona_id"
+      },
+      {
+        "type": "STRING",
+        "name": "widget",
+        "description": "indicates the name of your configured widget"
+      },
+      {
+        "type": "STRING",
+        "name": "language",
+        "description": "the language"
+      },
+      {
+        "type": "INTEGER",
+        "name": "hitCount",
+        "description": "the number of hit to be returned per page"
+      },
+      {
+        "type": "INTEGER",
+        "name": "offset",
+        "description": "the offset to be requested, by default 0"
+      },
+      {
+        "type": "STRING",
+        "name": "groupBy",
+        "description": "the group by field, by default 'products_group_id'"
+      },
+      {
+        "description": "The list of fields that should be returned for each bx-hit in the response",
+        "type": "STRING",
+        "name": "returnFields",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "field"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "negative"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          },
+          {
+            "type": "FLOAT",
+            "name": "from"
+          },
+          {
+            "type": "FLOAT",
+            "name": "to"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "fromInclusive"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "toInclusive"
+          }
+        ],
+        "description": "The list of filters to apply in the request",
+        "type": "RECORD",
+        "name": "filters",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "field"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          },
+          {
+            "type": "STRING",
+            "name": "valueKey"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "numerical"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "range"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "boundsOnly"
+          },
+          {
+            "type": "FLOAT",
+            "name": "from"
+          },
+          {
+            "type": "FLOAT",
+            "name": "to"
+          }
+        ],
+        "description": "The list of facets to apply in the request",
+        "type": "RECORD",
+        "name": "facets",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "field"
+          },
+          {
+            "type": "BOOLEAN",
+            "name": "reverse"
+          }
+        ],
+        "description": "The list of sorts to apply in the request",
+        "type": "RECORD",
+        "name": "sort",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "field"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          },
+          {
+            "type": "STRING",
+            "name": "role"
+          }
+        ],
+        "description": "The list of items to apply in the request",
+        "type": "RECORD",
+        "name": "items",
+        "mode": "REPEATED"
+      },
+      {
+        "type": "BOOLEAN",
+        "name": "orFilters",
+        "description": "if the filters should be applied as and or as or"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "name"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "The list of fields that should be returned for each bx-hit in the response",
+        "type": "RECORD",
+        "name": "parameters",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional string (not localized) attributes of the content",
+        "type": "RECORD",
+        "name": "string_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "value_id"
+              },
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "STRING",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "value",
+                "mode": "REPEATED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional localized string attributes of the content",
+        "type": "RECORD",
+        "name": "localized_string_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
+            "type": "NUMERIC",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional numeric (not localized) attributes of the content",
+        "type": "RECORD",
+        "name": "numeric_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "STRING",
+            "name": "key"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "value_id"
+              },
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "NUMERIC",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "value",
+                "mode": "REPEATED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional localized numeric attributes of the content",
+        "type": "RECORD",
+        "name": "localized_numeric_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "type": "DATETIME",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional datetime (not localized) attributes of the content",
+        "type": "RECORD",
+        "name": "datetime_attributes",
+        "mode": "REPEATED"
+      },
+      {
+        "fields": [
+          {
+            "type": "STRING",
+            "name": "type"
+          },
+          {
+            "type": "STRING",
+            "name": "name",
+            "mode": "REQUIRED"
+          },
+          {
+            "fields": [
+              {
+                "type": "STRING",
+                "name": "value_id"
+              },
+              {
+                "fields": [
+                  {
+                    "type": "STRING",
+                    "name": "language",
+                    "mode": "REQUIRED"
+                  },
+                  {
+                    "type": "DATETIME",
+                    "name": "value",
+                    "mode": "REQUIRED"
+                  }
+                ],
+                "type": "RECORD",
+                "name": "value",
+                "mode": "REPEATED"
+              }
+            ],
+            "type": "RECORD",
+            "name": "values",
+            "mode": "REPEATED"
+          }
+        ],
+        "description": "additional localized datetime attributes of the content",
+        "type": "RECORD",
+        "name": "localized_datetime_attributes",
+        "mode": "REPEATED"
+      }
+    ],
+    "description": "information about the content of the communication, typically only provided for the 'sent' event, as the other events should refer to the same message_id and persona_id / email so no need to indicate the content every time, only for sent",
+    "type": "RECORD",
+    "name": "request",
+    "mode": "REPEATED"
+  },
+  {
+    "fields": [
+      {
+        "type": "STRING",
         "name": "type"
       },
       {
