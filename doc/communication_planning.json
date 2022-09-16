@@ -2661,7 +2661,7 @@
         "mode": "REPEATED"
       }
     ],
-    "description": "information about the content of the communication, typically only provided for the 'sent' event, as the other events should refer to the same message_id and persona_id / email so no need to indicate the content every time, only for sent",
+    "description": "requests to be sent to the Boxalino Narrative API",
     "type": "RECORD",
     "name": "requests",
     "mode": "REPEATED"
