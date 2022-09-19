@@ -291,9 +291,14 @@
           }
         ],
         "type": "RECORD",
-        "name": "filter",
+        "name": "filters",
         "mode": "REPEATED"
       },
+	  {
+		"type": "BOOLEAN",
+		"name": "filters_or",
+		"description": "are the filter conditions and or or to be true"
+	  },
       {
         "fields": [
           {
@@ -478,7 +483,7 @@
   },
   {
     "type": "BOOLEAN",
-    "name": "thread_condition_or",
+    "name": "thread_conditions_or",
     "description": "are the conditions and or or to be true"
   },
   {

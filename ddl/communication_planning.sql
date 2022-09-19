@@ -14,7 +14,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_pla
 		, operator STRING OPTIONS(description="")
 		, values ARRAY<STRING> OPTIONS(description="")
 		, any_value BOOLEAN OPTIONS(description="")
-		, filter ARRAY<STRUCT<
+		, filters ARRAY<STRUCT<
 			condition_id STRING OPTIONS(description="")
 			, type STRING OPTIONS(description="")
 			, source STRING OPTIONS(description="")
@@ -29,6 +29,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_pla
 			, datetime_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<DATETIME NOT NULL>>> OPTIONS(description="additional datetime (not localized) attributes of the voucher")
 			, localized_datetime_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>> OPTIONS(description="additional localized datetime attributes of the voucher")
 		>>
+		, filters_or BOOLEAN OPTIONS(description="are the filter conditions and or or to be true")
 		, string_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<STRING NOT NULL>>> OPTIONS(description="additional string (not localized) attributes of the voucher")
 		, localized_string_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<STRUCT<language STRING NOT NULL, value STRING NOT NULL>>>> OPTIONS(description="additional localized string attributes of the voucher")
 		, numeric_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, key STRING, values ARRAY<NUMERIC NOT NULL>>> OPTIONS(description="additional numeric (not localized) attributes of the voucher")
@@ -36,14 +37,14 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_pla
 		, datetime_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<DATETIME NOT NULL>>> OPTIONS(description="additional datetime (not localized) attributes of the voucher")
 		, localized_datetime_attributes ARRAY<STRUCT<type STRING, name STRING NOT NULL, values ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>> OPTIONS(description="additional localized datetime attributes of the voucher")
 	>> OPTIONS(description="the conditions for the thread to be true")
-	, thread_condition_or BOOLEAN OPTIONS(description="are the conditions and or or to be true")
+	, thread_conditions_or BOOLEAN OPTIONS(description="are the conditions and or or to be true")
 	, name STRING OPTIONS(description="the name of the campaign or communication")
 	, channel_ids ARRAY<STRING> OPTIONS(description="the ids of the communication channels (optional)")
 	, channel_names ARRAY<STRING> OPTIONS(description="the channels (name) of the communication: 'email', ...")
 	, campaign_id STRING OPTIONS(description="the id of the campaign or communication group")
 	, campaign_name STRING OPTIONS(description="the name of the campaign or communication group")
 	, receivers ARRAY<STRUCT<
-		type STRING NOT NULL OPTIONS(description="e.g.: billing, shipping")
+		type STRING NOT NULL OPTIONS(description="e.g.: customer, segment")
 		, persona_id STRING OPTIONS(description="the persona_id as referenced in other tables")
 		, persona_type STRING OPTIONS(description="the type of persona (user, guest, ...)")
 		, internal_id STRING OPTIONS(description="an additional internal id (optional)")
