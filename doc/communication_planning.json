@@ -1728,7 +1728,7 @@
         ],
         "description": "relations to other contents",
         "type": "RECORD",
-        "name": "contents",
+        "name": "sub_contents",
         "mode": "REPEATED"
       },
       {
