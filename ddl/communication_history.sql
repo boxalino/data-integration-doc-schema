@@ -158,6 +158,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_his
 	, sender_attribute_4_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure senders")
 	, sender_attribute_5_name STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure senders")
 	, sender_attribute_5_value STRING  OPTIONS(description="use only if providing data in flat format (like CSV) if you skip the nested structure senders")
+	, subject STRING OPTIONS(description="the subject of the email")
 	, contents ARRAY<STRUCT<
 		id STRING OPTIONS(description="the unique id of the content as provided in doc_content")
 		, type STRING OPTIONS(description="the type of content as provided in doc_content: 'blog', 'magazin', 'page', ...")

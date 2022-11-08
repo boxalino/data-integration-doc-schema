@@ -152,6 +152,7 @@ CREATE OR REPLACE TABLE `{{ YOUR_PROJECT }}.{{ YOUR_DATASET }}.communication_pla
 		, notifications ARRAY<STRUCT<type STRING, name STRING NOT NULL, status INT64 NOT NULL, periods ARRAY<STRUCT<start_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>, end_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>>>> OPTIONS(description="the state of the notofications (e-mails and others)")
 		, voucher_states ARRAY<STRUCT<type STRING, name STRING NOT NULL, status INT64 NOT NULL, periods ARRAY<STRUCT<start_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>, end_datetime ARRAY<STRUCT<language STRING NOT NULL, value DATETIME NOT NULL>>>>>> OPTIONS(description="the state of the vouchers (used and others)")
 	>> OPTIONS(description="information about the communication senders")
+	, subject STRING OPTIONS(description="the subject of the communication")
 	, contents ARRAY<STRUCT<
 		id STRING OPTIONS(description="the unique id of the content as provided in doc_content")
 		, type STRING OPTIONS(description="the type of content as provided in doc_content: 'blog', 'magazin', 'page', ...")

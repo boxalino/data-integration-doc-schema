@@ -1377,6 +1377,11 @@
     "description": "use only if providing data in flat format (like CSV) if you skip the nested structure senders"
   },
   {
+    "description": "the subject of the communication",
+    "type": "STRING",
+    "name": "subject"
+  },
+  {
     "fields": [
       {
         "type": "STRING",

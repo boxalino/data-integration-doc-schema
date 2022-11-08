@@ -1634,6 +1634,11 @@
     "mode": "REPEATED"
   },
   {
+    "description": "the subject of the communication",
+    "type": "STRING",
+    "name": "subject"
+  },
+  {
     "fields": [
       {
         "type": "STRING",
