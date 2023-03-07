@@ -27,10 +27,12 @@ where,
    * c) paste the JSON schema in the [generator.html, for `var bqSchema=[];`](https://github.com/boxalino/data-integration-doc-schema/blob/master/schema/generator.html#L10)
    * d) open the generator.html in your browser
    * e) copy the displayed JSON object schema, generated for your data type
-   * f) open any JSON validator of your choice (ex: https://www.jsonschemavalidator.net/)
+   * f) open any JSON validator of your choice (ex: https://www.jsonschemavalidator.net/, https://jsonschemalint.com/)
    * g) paste the JSON object schema and your JSONL data 
    * h) fix any errors 
 
+> Note: the JSON validators are only able to validate the properties from your JSON sample that exist in the JSON schema definition. 
+> Please make sure to not use undocumented properties in your JSON samples.
 
 ## Contact Us
 
