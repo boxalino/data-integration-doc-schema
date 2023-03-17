@@ -34,6 +34,11 @@ where,
 > Note: the JSON validators are only able to validate the properties from your JSON sample that exist in the JSON schema definition. 
 > Please make sure to not use undocumented properties in your JSON samples.
 
+
+## Integration Flow
+Is the data structured to match the requirements for Boxalino Data Structure?
+Review the upcoming technical steps to take to make it part of the Boxalino Data Wharehouse Ecosystem [here](https://boxalino.atlassian.net/wiki/spaces/BPKB/pages/904167427/Integration+Flow)
+
 ## Contact Us
 
 If you have any question, just contact us at support@boxalino.com
